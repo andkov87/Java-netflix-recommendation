@@ -1,5 +1,7 @@
 package com.codecool.netflix.data;
 
+import java.util.Objects;
+
 public class TitleWithSimilarityScore {
     private final Title title;
     private final Integer similarityScore;

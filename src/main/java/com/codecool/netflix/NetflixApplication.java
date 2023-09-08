@@ -40,24 +40,19 @@ public class NetflixApplication {
                 return false;
             }
             case 1 -> {
-                System.out.println("Not implemented yet");
-                //getTopNImdbScoreFromTitles();
+                getTopNImdbScoreFromTitles();
             }
             case 2 -> {
-                System.out.println("Not implemented yet");
-                //getAllCreditsForTitle();
+                getAllCreditsForTitle();
             }
             case 3 -> {
-                System.out.println("Not implemented yet");
-                //getTop5ImdbScoreFromGivenGenre();
+                getTopNImdbScoreFromGivenGenre();
             }
             case 4 -> {
-                System.out.println("Not implemented yet");
-                //getAllTitlesByCreditName();
+                getAllTitlesByCreditName();
             }
             case 5 -> {
-                System.out.println("Not implemented yet");
-                //recommendMeSomethingBasedOnAMovie();
+                recommendMeSomethingBasedOnAMovie();
             }
             default -> System.out.println("Invalid menu item selection!\n");
         }
@@ -101,8 +96,9 @@ public class NetflixApplication {
         List<TitleWithSimilarityScore> similarMoviesByTitle = null;
         while (similarMoviesByTitle == null){
             String title = scanner.getUserInput("Type in a name!");
+            Integer n = scanner.getNumericUserInput("Length of the list?");
             try {
-                similarMoviesByTitle = titles.getSimilarMoviesByTitle(title, credits.getCredits());
+                similarMoviesByTitle = titles.getSimilarMoviesByTitle(title, credits.getCredits(), n);
             } catch (NoSuchElementException e){
                 System.out.println(e.getMessage());
             }

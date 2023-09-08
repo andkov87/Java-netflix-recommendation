@@ -4,6 +4,7 @@ import com.codecool.netflix.data.enums.AgeCertification;
 import com.codecool.netflix.data.enums.Type;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Title{
     private String id;

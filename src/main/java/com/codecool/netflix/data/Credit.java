@@ -2,6 +2,8 @@ package com.codecool.netflix.data;
 
 import com.codecool.netflix.data.enums.Role;
 
+import java.util.Objects;
+
 public class Credit {
     private Long personId;
     private String id;

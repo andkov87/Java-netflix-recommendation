@@ -22,8 +22,16 @@ public class CreditManager implements CsvItemCollection {
     }
 
     public List<Title> getAllTitlesByCreditName(String name, List<Title> titles) {
-        return new ArrayList<>();
-        //TODO: Your code here
+        List<String> getActorId = credits.stream()
+                .filter(credit -> credit.getName().equalsIgnoreCase(name))
+                .map(Credit::getId)
+                .toList();
+
+        List<Title> getSameTitleId = titles.stream()
+                .filter(title -> getActorId.contains(title.getId()))
+                .toList();
+
+        return getSameTitleId;
     }
 
     public List<Credit> getCredits() {
